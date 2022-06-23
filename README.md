@@ -932,3 +932,310 @@ in **alphabetical** order.
 </tr>
 </tbody>
 </table>
+
+## **17. Garage**
+
+Write a function that **stores cars** in garages. You will be given an
+**array of strings**. Each string will contain a **number of a garage**
+and **info about a car**. You have to store the car (with its info) in
+the given garage. The info about the car will be in the format:
+
+> **"{key1}: {value1}, {key2}: {value2}…"**
+
+If the garage **does not exist, create it**. The cars will always be
+**unique.** At the end print the result in the format:  
+**"Garage № {number}:  
+\--- {carOneKeyOne} - {carOneValueOne}, {carOneKeyTwo} -
+{carOneValueTwo}…  
+\--- {the same for the next car}  
+Garage № {number}: …"**
+
+### Example
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>['1 - color: blue, fuel type: diesel', '1 - color: red, manufacture: Audi', '2 - fuel type: petrol', '4 - color: dark blue, fuel type: diesel, manufacture: Fiat']</td>
+<td><p>Garage № 1</p>
+<p>--- color - blue, fuel type - diesel</p>
+<p>--- color - red, manufacture - Audi</p>
+<p>Garage № 2</p>
+<p>--- fuel type - petrol</p>
+<p>Garage № 4</p>
+<p>--- color - dark blue, fuel type - diesel, manufacture - Fiat</p></td>
+</tr>
+<tr class="even">
+<td><p>['1 - color: green, fuel type: petrol',</p>
+<p>'1 - color: dark red, manufacture: WV',</p>
+<p>'2 - fuel type: diesel',</p>
+<p>'3 - color: dark blue, fuel type: petrol']</p></td>
+<td><p>Garage № 1</p>
+<p>--- color - green, fuel type - petrol</p>
+<p>--- color - dark red, manufacture - WV</p>
+<p>Garage № 2</p>
+<p>--- fuel type - diesel</p>
+<p>Garage № 3</p>
+<p>--- color - dark blue, fuel type - petrol</p></td>
+</tr>
+</tbody>
+</table>
+
+## **18. Armies**
+
+Write a function that stores information about an army leader and his
+armies. The input will be an array of strings. The strings can be in
+some of the following formats:  
+**"{leader} arrives"** – add the leader (no army)
+
+**"{leader}: {army name}, {army count}"** – add the army with its count
+to the leader (if he exists)  
+**"{army name} + {army count}"** – if the army exists somewhere add the
+count  
+**"{leader} defeated"** – delete the leader and his army (if he exists)
+
+When finished reading the input sort the **leaders** by **total army
+count** in **descending**. Then each **army** should be sorted by
+**count in descending**.
+
+### Output
+
+Print in the following format:  
+**"{leader one name}: {total army count}  
+\>\>\> {armyOne name} - {army count}  
+\>\>\> {armyTwo name} - {army count}  
+…  
+{leader two name}: {total army count}  
+…"**
+
+### Constrains
+
+  - The **new leaders** will always be **unique**
+
+  - When **adding a new army** to the leader, the army will be
+    **unique**
+
+### Example
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>['Rick Burr arrives', 'Fergus: Wexamp, 30245', 'Rick Burr: Juard, 50000', 'Findlay arrives', 'Findlay: Britox, 34540', 'Wexamp + 6000', 'Juard + 1350', 'Britox + 4500', 'Porter arrives', 'Porter: Legion, 55000', 'Legion + 302', 'Rick Burr defeated', 'Porter: Retix, 3205']</td>
+<td><p>Porter: 58507</p>
+<p>&gt;&gt;&gt; Legion - 55302</p>
+<p>&gt;&gt;&gt; Retix - 3205</p>
+<p>Findlay: 39040</p>
+<p>&gt;&gt;&gt; Britox - 39040</p></td>
+</tr>
+<tr class="even">
+<td>['Rick Burr arrives', 'Findlay arrives', 'Rick Burr: Juard, 1500', 'Wexamp arrives', 'Findlay: Wexamp, 34540', 'Wexamp + 340', 'Wexamp: Britox, 1155', 'Wexamp: Juard, 43423']</td>
+<td><p>Wexamp: 44578</p>
+<p>&gt;&gt;&gt; Juard - 43423</p>
+<p>&gt;&gt;&gt; Britox - 1155</p>
+<p>Findlay: 34880</p>
+<p>&gt;&gt;&gt; Wexamp - 34880</p>
+<p>Rick Burr: 1500</p>
+<p>&gt;&gt;&gt; Juard - 1500</p></td>
+</tr>
+</tbody>
+</table>
+
+## **19. Comments**
+
+Write a function that stores information about users and their comments
+on a website. You have to store the **users**, the **comments as an
+object with title and content,** and the **article** that the comment is
+about. The user can only comment, when he is on the **list of users**
+and **the article is in the list of articles**. The input comes as an
+array of strings. The strings will be in the format:  
+**"user {username}"** – add the user to the list of users  
+**"article {article name}"** – add the article to the article list  
+**"{username} posts on {article name}: {comment title}, {comment
+content}"** – save the info
+
+At the end **sort** the articles by a **count of comments** and print
+the **users with their comments** ordered by **usernames in ascending**.
+
+### Output
+
+Print the result in the following format:  
+**"Comments on {article1 name}  
+\--- From user {username1}: {comment title} - {comment content}  
+\--- From user {username2}: …  
+Comments on {article2 name}  
+…"**
+
+### Example
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>['user aUser123', 'someUser posts on someArticle: NoTitle, stupidComment', 'article Books', 'article Movies', 'article Shopping', 'user someUser', 'user uSeR4', 'user lastUser', 'uSeR4 posts on Books: I like books, I do really like them', 'uSeR4 posts on Movies: I also like movies, I really do', 'someUser posts on Shopping: title, I go shopping every day', 'someUser posts on Movies: Like, I also like movies very much']</td>
+<td><p>Comments on Movies</p>
+<p>--- From user someUser: Like - I also like movies very much</p>
+<p>--- From user uSeR4: I also like movies - I really do</p>
+<p>Comments on Books</p>
+<p>--- From user uSeR4: I like books - I do really like them</p>
+<p>Comments on Shopping</p>
+<p>--- From user someUser: title - I go shopping every day</p></td>
+</tr>
+<tr class="even">
+<td>['user Mark', 'Mark posts on someArticle: NoTitle, stupidComment', 'article Bobby', 'article Steven', 'user Liam', 'user Henry', 'Mark posts on Bobby: Is, I do really like them', 'Mark posts on Steven: title, Run', 'someUser posts on Movies: Like']</td>
+<td><p>Comments on Bobby</p>
+<p>--- From user Mark: Is - I do really like them</p>
+<p>Comments on Steven</p>
+<p>--- From user Mark: title - Run</p></td>
+</tr>
+</tbody>
+</table>
+
+## **20. Book Shelf**
+
+Write a function that stores information about **shelves** and the
+**books on the shelves**. Each shelf has an **Id** and a **genre** of
+books that can be on it. Each book has a **title**, an **author,** and a
+**genre**. The input comes as an **array of strings**. They will be in
+the format:  
+**"{shelf id} -\> {shelf genre}"** – create a shelf **if the id is not
+taken**.  
+**"{book title}: {book author}, {book genre}"** – if a shelf with that
+**genre exists**, add the book to the shelf.  
+After finishing reading input, sort the shelves by a **count of books**
+in it in **descending**. For each shelf sort the **books by title** in
+ascending. Then print them in the following format.  
+**"{shelfOne id} {shelf genre}: {books count}  
+\--\> {bookOne title}: {bookOne author}  
+\--\> {bookTwo title}: {bookTwo author}  
+…  
+{shelfTwo id} {shelf genre}: {books count}  
+…"**
+
+### Example
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>['1 -&gt; history', '1 -&gt; action', 'Death in Time: Criss Bell, mystery', '2 -&gt; mystery', '3 -&gt; sci-fi', 'Child of Silver: Bruce Rich, mystery', 'Hurting Secrets: Dustin Bolt, action', 'Future of Dawn: Aiden Rose, sci-fi', 'Lions and Rats: Gabe Roads, history', '2 -&gt; romance', 'Effect of the Void: Shay B, romance', 'Losing Dreams: Gail Starr, sci-fi', 'Name of Earth: Jo Bell, sci-fi', 'Pilots of Stone: Brook Jay, history']</td>
+<td><p>3 sci-fi: 3</p>
+<p>--&gt; Future of Dawn: Aiden Rose</p>
+<p>--&gt; Losing Dreams: Gail Starr</p>
+<p>--&gt; Name of Earth: Jo Bell</p>
+<p>1 history: 2</p>
+<p>--&gt; Lions and Rats: Gabe Roads</p>
+<p>--&gt; Pilots of Stone: Brook Jay</p>
+<p>2 mystery: 1</p>
+<p>--&gt; Child of Silver: Bruce Rich</p></td>
+</tr>
+<tr class="even">
+<td><p>['1 -&gt; mystery', '2 -&gt; sci-fi',</p>
+<p>'Child of Silver: Bruce Rich, mystery',</p>
+<p>'Lions and Rats: Gabe Roads, history',</p>
+<p>'Effect of the Void: Shay B, romance',</p>
+<p>'Losing Dreams: Gail Starr, sci-fi',</p>
+<p>'Name of Earth: Jo Bell, sci-fi']</p></td>
+<td><p>2 sci-fi: 2</p>
+<p>--&gt; Losing Dreams: Gail Starr</p>
+<p>--&gt; Name of Earth: Jo Bell</p>
+<p>1 mystery: 1</p>
+<p>--&gt; Child of Silver: Bruce Rich</p></td>
+</tr>
+</tbody>
+</table>
+
+## **21. SoftUni Students**
+
+Write a function that stores the **students** that signed up for
+different **courses** at SoftUni. For each **course,** you have to
+**store the name**, the **capacity,** and the **student**s that are in
+it. For each **student** store the **username, the email, and their
+credits**. The input will come as an **array of strings**. The strings
+will be in some of the following formats:  
+**"{course name}: {capacity}"** – add the course with that capacity. If
+the **course exists**, **add** the **capacity** to the existing one  
+**"{username}\[{credits count}\] with email {email} joins {course
+name}"** – add the student **if the course exists** (each student can be
+in **multiple courses**) and if there are **places left** (**count of
+students** are **less than the capacity**)
+
+Finally, you should sort the courses by the **count of students** in
+**descending**. Each course should have its students sorted by **credits
+in descending**.
+
+### Output
+
+Print the result in the format:  
+**"{course one}: {places left} places left  
+\--- {credits}: {username one}, {email one}  
+…"**
+
+### Example
+
+<table>
+<thead>
+<tr class="header">
+<th><strong>Input</strong></th>
+<th><strong>Output</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>['JavaBasics: 2', 'user1[25] with email user1@user.com joins C#Basics', 'C#Advanced: 3', 'JSCore: 4', 'user2[30] with email user2@user.com joins C#Basics', 'user13[50] with email user13@user.com joins JSCore', 'user1[25] with email user1@user.com joins JSCore', 'user8[18] with email user8@user.com joins C#Advanced', 'user6[85] with email user6@user.com joins JSCore', 'JSCore: 2', 'user11[3] with email user11@user.com joins JavaBasics', 'user45[105] with email user45@user.com joins JSCore', 'user007[20] with email user007@user.com joins JSCore', 'user700[29] with email user700@user.com joins JSCore', 'user900[88] with email user900@user.com joins JSCore']</td>
+<td><p>JSCore: 0 places left</p>
+<p>--- 105: user45, user45@user.com</p>
+<p>--- 85: user6, user6@user.com</p>
+<p>--- 50: user13, user13@user.com</p>
+<p>--- 29: user700, user700@user.com</p>
+<p>--- 25: user1, user1@user.com</p>
+<p>--- 20: user007, user007@user.com</p>
+<p>JavaBasics: 1 places left</p>
+<p>--- 3: user11, user11@user.com</p>
+<p>C#Advanced: 2 places left</p>
+<p>--- 18: user8, user8@user.com</p></td>
+</tr>
+<tr class="even">
+<td><p>['JavaBasics: 15',</p>
+<p>'user1[26] with email user1@user.com joins JavaBasics',</p>
+<p>'user2[36] with email user11@user.com joins JavaBasics',</p>
+<p>'JavaBasics: 5',</p>
+<p>'C#Advanced: 5',</p>
+<p>'user1[26] with email user1@user.com joins C#Advanced',</p>
+<p>'user2[36] with email user11@user.com joins C#Advanced',</p>
+<p>'user3[6] with email user3@user.com joins C#Advanced',</p>
+<p>'C#Advanced: 1',</p>
+<p>'JSCore: 8',</p>
+<p>'user23[62] with email user23@user.com joins JSCore']</p></td>
+<td><p>C#Advanced: 3 places left</p>
+<p>--- 36: user2, user11@user.com</p>
+<p>--- 26: user1, user1@user.com</p>
+<p>--- 6: user3, user3@user.com</p>
+<p>JavaBasics: 18 places left</p>
+<p>--- 36: user2, user11@user.com</p>
+<p>--- 26: user1, user1@user.com</p>
+<p>JSCore: 7 places left</p>
+<p>--- 62: user23, user23@user.com</p></td>
+</tr>
+</tbody>
+</table>
